@@ -7,7 +7,9 @@
   :root {
     --bg-primary: #0a0a0a;
     --accent: #6c5ce7;
-    --accent-glow: rgba(108, 92, 231, 0.35);
+    --accent-glow: rgba(108, 92, 231, 0.4);
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
   }
 
   * {
@@ -20,85 +22,102 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   body {
     background-color: #0a0a0a;
     color: #ffffff;
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-body);
     overflow-x: hidden;
   }
 
   ::selection {
-    background: rgba(108, 92, 231, 0.4);
+    background: rgba(108, 92, 231, 0.45);
     color: #ffffff;
   }
 
   /* Scrollbar */
-  ::-webkit-scrollbar {
-    width: 4px;
-  }
-  ::-webkit-scrollbar-track {
-    background: #0a0a0a;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: #333;
-    border-radius: 2px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: #6c5ce7;
-  }
+  ::-webkit-scrollbar { width: 3px; }
+  ::-webkit-scrollbar-track { background: #0a0a0a; }
+  ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
+  ::-webkit-scrollbar-thumb:hover { background: #6c5ce7; }
 }
 
 /* ── Utility Classes ─────────────────────────────────────────── */
 @layer utilities {
+
+  /* Typography */
   .text-gradient-accent {
-    background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 50%, #fd79a8 100%);
+    background: linear-gradient(135deg, #a29bfe 0%, #ffffff 50%, #a29bfe 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  .glow-accent {
-    box-shadow: 0 0 30px rgba(108, 92, 231, 0.3), 0 0 60px rgba(108, 92, 231, 0.1);
+  .text-gradient-brand {
+    background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 60%, #ffffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
-  .glow-accent-hover:hover {
-    box-shadow: 0 0 40px rgba(108, 92, 231, 0.4), 0 0 80px rgba(108, 92, 231, 0.15);
-  }
-
+  /* Glass variants */
   .glass {
     background: rgba(255, 255, 255, 0.04);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .glass-accent {
-    background: rgba(108, 92, 231, 0.08);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(108, 92, 231, 0.2);
+    background: rgba(108, 92, 231, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(108, 92, 231, 0.25);
   }
 
-  .ambient-bg {
-    background:
-      radial-gradient(ellipse 80% 60% at 20% 10%, rgba(108, 92, 231, 0.12) 0%, transparent 60%),
-      radial-gradient(ellipse 60% 50% at 80% 90%, rgba(108, 92, 231, 0.08) 0%, transparent 50%),
-      #0a0a0a;
+  /* Glow effects */
+  .glow-accent {
+    box-shadow: 0 0 40px rgba(108, 92, 231, 0.35), 0 0 80px rgba(108, 92, 231, 0.1);
   }
 
+  .glow-sm {
+    box-shadow: 0 0 20px rgba(108, 92, 231, 0.3);
+  }
+
+  /* Premium card */
+  .premium-card {
+    background: linear-gradient(145deg, #1c1c1c 0%, #161616 100%);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  .premium-card-accent {
+    background: linear-gradient(145deg, #1c1c1c 0%, #161616 100%);
+    border: 1px solid rgba(108, 92, 231, 0.3);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5), 0 0 60px rgba(108, 92, 231, 0.1), inset 0 1px 0 rgba(108, 92, 231, 0.15);
+  }
+
+  /* Section padding — cinematic spacing */
   .section-padding {
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 96px;
+    padding-bottom: 96px;
     padding-left: 24px;
     padding-right: 24px;
   }
 
   @media (min-width: 768px) {
     .section-padding {
-      padding-top: 100px;
-      padding-bottom: 100px;
+      padding-top: 120px;
+      padding-bottom: 120px;
       padding-left: 48px;
       padding-right: 48px;
     }
@@ -106,19 +125,54 @@
 
   @media (min-width: 1024px) {
     .section-padding {
-      padding-top: 120px;
-      padding-bottom: 120px;
+      padding-top: 140px;
+      padding-bottom: 140px;
       padding-left: 80px;
       padding-right: 80px;
     }
   }
 
   .safe-bottom {
-    padding-bottom: calc(80px + env(safe-area-inset-bottom));
+    padding-bottom: calc(88px + env(safe-area-inset-bottom));
   }
 
-  /* Spotify iframe reset */
+  /* Section eyebrow label */
+  .eyebrow {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #6c5ce7;
+    font-family: var(--font-display);
+  }
+
+  /* Ambient background */
+  .ambient-bg {
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 10%, rgba(108, 92, 231, 0.14) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 80% 90%, rgba(108, 92, 231, 0.1) 0%, transparent 50%),
+      #0a0a0a;
+  }
+
+  /* Horizontal rule */
+  .rule-accent {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(108, 92, 231, 0.5), transparent);
+  }
+
+  /* Spotify iframe container */
   .spotify-embed iframe {
     border-radius: 12px !important;
+    display: block;
+  }
+
+  /* Grain overlay */
+  .grain::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    opacity: 0.025;
+    pointer-events: none;
   }
 }

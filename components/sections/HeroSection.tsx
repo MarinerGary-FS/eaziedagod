@@ -1,151 +1,209 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { useEffect, useRef } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import { eazieContent } from '@/content/eazie-content'
 
 interface HeroSectionProps {
   onEnterBio: () => void
 }
 
-const fadeUp = (delay = 0) => ({
-  hidden: { opacity: 0, y: 32 },
+const reveal = (delay = 0) => ({
+  hidden: { opacity: 0, y: 48, filter: 'blur(4px)' },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1], delay },
+    filter: 'blur(0px)',
+    transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1], delay },
   },
 })
 
 export default function HeroSection({ onEnterBio }: HeroSectionProps) {
+  const ref = useRef<HTMLElement>(null)
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
+  const parallaxY = useTransform(scrollYProgress, [0, 1], ['0%', '25%'])
+  const parallaxOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0])
+
   return (
     <section
       id="home"
-      className="relative min-h-[85vh] md:min-h-[90vh] flex flex-col items-center justify-center overflow-hidden"
+      ref={ref}
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
     >
-      {/* Background gradient layers */}
-      <div className="absolute inset-0 z-0">
+      {/* ── Layered background ─────────────────────────── */}
+      <motion.div className="absolute inset-0 z-0" style={{ y: parallaxY }}>
+        {/* Primary top glow — large, centered */}
         <div
           className="absolute inset-0"
           style={{
-            background:
-              'radial-gradient(ellipse 90% 70% at 50% 0%, rgba(108, 92, 231, 0.18) 0%, transparent 65%)',
+            background: 'radial-gradient(ellipse 100% 80% at 50% -10%, rgba(108, 92, 231, 0.28) 0%, transparent 60%)',
           }}
         />
+        {/* Secondary corner depth */}
         <div
           className="absolute inset-0"
           style={{
-            background:
-              'radial-gradient(ellipse 60% 50% at 80% 100%, rgba(108, 92, 231, 0.1) 0%, transparent 55%)',
+            background: 'radial-gradient(ellipse 50% 60% at 85% 95%, rgba(108, 92, 231, 0.14) 0%, transparent 55%)',
           }}
         />
-        {/* Noise texture overlay */}
+        {/* Tertiary left accent */}
         <div
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute inset-0"
           style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E")`,
+            background: 'radial-gradient(ellipse 40% 50% at 5% 60%, rgba(108, 92, 231, 0.08) 0%, transparent 50%)',
           }}
         />
-      </div>
+        {/* Grain texture */}
+        <div
+          className="absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+          }}
+        />
+        {/* Subtle horizontal line grid */}
+        <div
+          className="absolute inset-0 opacity-[0.025]"
+          style={{
+            backgroundImage: 'linear-gradient(rgba(108,92,231,0.8) 1px, transparent 1px)',
+            backgroundSize: '100% 120px',
+          }}
+        />
+      </motion.div>
 
+      {/* ── Content ────────────────────────────────────── */}
       <motion.div
-        className="relative z-10 flex flex-col items-center text-center px-6 py-20 max-w-4xl mx-auto"
+        className="relative z-10 flex flex-col items-center text-center px-6 pt-28 pb-24 max-w-5xl mx-auto w-full"
+        style={{ opacity: parallaxOpacity }}
         initial="hidden"
         animate="show"
       >
-        {/* Eyebrow */}
-        <motion.div variants={fadeUp(0)} className="mb-6">
+        {/* Eyebrow pill */}
+        <motion.div variants={reveal(0)} className="mb-8">
           <span
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-body font-medium tracking-widest uppercase"
+            className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full text-[11px] font-display font-semibold tracking-[0.2em] uppercase"
             style={{
-              background: 'rgba(108, 92, 231, 0.12)',
-              border: '1px solid rgba(108, 92, 231, 0.3)',
-              color: '#a29bfe',
+              background: 'rgba(108, 92, 231, 0.1)',
+              border: '1px solid rgba(108, 92, 231, 0.35)',
+              color: '#c4b5fd',
+              boxShadow: '0 0 20px rgba(108, 92, 231, 0.15)',
             }}
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse-glow" />
+            <span
+              className="w-1.5 h-1.5 rounded-full"
+              style={{ background: '#6C5CE7', boxShadow: '0 0 6px #6C5CE7' }}
+            />
             {eazieContent.descriptor}
           </span>
         </motion.div>
 
-        {/* Headline */}
+        {/* Headline — dominant, two-line intent */}
         <motion.h1
-          variants={fadeUp(0.1)}
-          className="font-display font-bold leading-none tracking-tight text-white mb-6"
-          style={{ fontSize: 'clamp(2.5rem, 7vw, 5rem)', letterSpacing: '-0.03em' }}
+          variants={reveal(0.1)}
+          className="font-display font-bold text-white mb-7 leading-[0.95] tracking-tight"
+          style={{
+            fontSize: 'clamp(3.2rem, 8.5vw, 7rem)',
+            letterSpacing: '-0.035em',
+            textShadow: '0 0 80px rgba(108, 92, 231, 0.25)',
+          }}
         >
-          {eazieContent.heroHeadline}
+          Tap Into the Sound,<br />
+          <span className="text-gradient-accent">the Story,</span>{' '}
+          <span style={{ color: 'rgba(255,255,255,0.55)' }}>and the Movement</span>
         </motion.h1>
 
         {/* Subcopy */}
         <motion.p
-          variants={fadeUp(0.2)}
-          className="font-body text-text-secondary text-lg md:text-xl max-w-2xl leading-relaxed mb-10"
+          variants={reveal(0.2)}
+          className="font-body text-text-secondary max-w-xl leading-relaxed mb-12"
+          style={{ fontSize: 'clamp(1rem, 2vw, 1.2rem)' }}
         >
           {eazieContent.heroSubcopy}
         </motion.p>
 
-        {/* CTAs */}
+        {/* CTA row */}
         <motion.div
-          variants={fadeUp(0.3)}
-          className="flex flex-col sm:flex-row gap-4 items-center"
+          variants={reveal(0.3)}
+          className="flex flex-col sm:flex-row gap-4 items-center w-full sm:w-auto"
         >
+          {/* Primary */}
           <a
             href={eazieContent.featuredAlbum.spotifyHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative overflow-hidden rounded-card px-8 py-4 font-display font-semibold text-sm tracking-wide text-white transition-all duration-300 active:scale-[0.97]"
+            className="group relative overflow-hidden rounded-card px-9 py-4 font-display font-bold text-[13px] tracking-wide text-white w-full sm:w-auto text-center transition-all duration-300 active:scale-[0.97]"
             style={{
-              background: 'linear-gradient(135deg, #6C5CE7 0%, #8B7CF6 100%)',
-              boxShadow: '0 0 28px rgba(108, 92, 231, 0.4)',
+              background: 'linear-gradient(135deg, #5b4bd4 0%, #6C5CE7 50%, #8B7CF6 100%)',
+              boxShadow: '0 0 0 1px rgba(108,92,231,0.4), 0 0 40px rgba(108, 92, 231, 0.45), 0 8px 32px rgba(0,0,0,0.4)',
             }}
           >
-            <span className="relative z-10 flex items-center gap-2">
+            <span className="relative z-10 flex items-center justify-center gap-2.5">
               <SpotifyIcon />
               Stream Now
             </span>
-            <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            {/* Shimmer effect */}
+            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/15 to-transparent" />
           </a>
 
+          {/* Secondary */}
           <a
             href={eazieContent.haven.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="group glass rounded-card px-8 py-4 font-display font-semibold text-sm tracking-wide text-white transition-all duration-300 hover:border-accent/40 active:scale-[0.97]"
+            className="group glass-strong rounded-card px-9 py-4 font-display font-semibold text-[13px] tracking-wide text-white w-full sm:w-auto text-center transition-all duration-300 hover:border-accent/50 active:scale-[0.97]"
+            style={{ boxShadow: '0 4px 24px rgba(0,0,0,0.3)' }}
           >
-            <span className="flex items-center gap-2">
+            <span className="flex items-center justify-center gap-2">
               Explore H@VEN
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="transition-transform duration-300 group-hover:translate-x-1">
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 16 16"
+                fill="none"
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              >
                 <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </span>
           </a>
         </motion.div>
 
-        {/* Location pill */}
-        <motion.p
-          variants={fadeUp(0.4)}
-          className="mt-10 text-text-muted text-xs font-body uppercase tracking-widest"
-        >
-          {eazieContent.locationCue}
-        </motion.p>
+        {/* Location */}
+        <motion.div variants={reveal(0.45)} className="mt-14 flex items-center gap-4">
+          <div className="h-px w-8 bg-accent/30" />
+          <span className="text-text-muted text-[11px] font-body uppercase tracking-[0.2em]">
+            {eazieContent.locationCue}
+          </span>
+          <div className="h-px w-8 bg-accent/30" />
+        </motion.div>
       </motion.div>
 
-      {/* Scroll indicator */}
+      {/* ── Scroll indicator ───────────────────────────── */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.2, duration: 0.6 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.6, duration: 0.8 }}
       >
-        <div className="flex flex-col items-center gap-2">
-          <div
-            className="w-px h-10 rounded-full"
-            style={{
-              background: 'linear-gradient(to bottom, rgba(108, 92, 231, 0.8), transparent)',
-            }}
-          />
-        </div>
+        <motion.div
+          className="w-[1px] rounded-full"
+          style={{ background: 'linear-gradient(to bottom, #6C5CE7, transparent)', height: 48 }}
+          animate={{ scaleY: [1, 0.4, 1], opacity: [0.8, 0.3, 0.8] }}
+          transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
+        />
+        <motion.span
+          className="text-[9px] font-display font-medium uppercase tracking-[0.25em] text-accent/60"
+          animate={{ opacity: [0.4, 0.8, 0.4] }}
+          transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
+        >
+          Scroll
+        </motion.span>
       </motion.div>
+
+      {/* ── Bottom fade to next section ─────────────────── */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-40 z-10 pointer-events-none"
+        style={{ background: 'linear-gradient(to bottom, transparent, #0a0a0a)' }}
+      />
     </section>
   )
 }

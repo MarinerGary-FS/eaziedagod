@@ -12,18 +12,29 @@ export default function SectionHeader({
   centered = false,
 }: SectionHeaderProps) {
   return (
-    <div className={`flex flex-col gap-3 ${centered ? 'items-center text-center' : ''}`}>
-      <span className="text-xs font-body font-medium uppercase tracking-widest text-accent">
-        {eyebrow}
-      </span>
+    <div className={`flex flex-col gap-4 ${centered ? 'items-center text-center' : ''}`}>
+      {/* Eyebrow with accent rule */}
+      <div className={`flex items-center gap-3 ${centered ? 'justify-center' : ''}`}>
+        {!centered && (
+          <div
+            className="h-px w-12"
+            style={{ background: 'linear-gradient(to right, #6C5CE7, transparent)' }}
+          />
+        )}
+        <span className="eyebrow">{eyebrow}</span>
+      </div>
+
+      {/* Headline */}
       <h2
-        className="font-display font-bold text-white leading-tight"
-        style={{ fontSize: 'clamp(1.75rem, 4vw, 2.75rem)', letterSpacing: '-0.02em' }}
+        className="font-display font-black text-white leading-[0.95] tracking-tight"
+        style={{ fontSize: 'clamp(2rem, 4.5vw, 3.25rem)', letterSpacing: '-0.03em' }}
       >
         {headline}
       </h2>
+
+      {/* Sub copy */}
       {subCopy && (
-        <p className="font-body text-text-secondary text-base md:text-lg leading-relaxed max-w-2xl">
+        <p className="font-body text-text-secondary leading-relaxed max-w-xl" style={{ fontSize: '1.0625rem' }}>
           {subCopy}
         </p>
       )}

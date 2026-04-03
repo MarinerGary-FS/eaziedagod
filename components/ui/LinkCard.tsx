@@ -13,20 +13,29 @@ export default function LinkCard({ link, index }: LinkCardProps) {
 
   const inner = (
     <motion.div
-      className="group w-full flex items-center gap-4 px-5 py-4 rounded-card transition-all duration-300"
+      className="group w-full flex items-center gap-4 px-4 py-3.5 rounded-card transition-all duration-300"
       style={{
-        background: '#1A1A1A',
+        background: 'linear-gradient(145deg, #1c1c1c 0%, #161616 100%)',
         border: '1px solid rgba(255,255,255,0.07)',
+        boxShadow: '0 4px 20px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.04)',
       }}
-      whileHover={isPending ? {} : { scale: 1.01, borderColor: 'rgba(108, 92, 231, 0.35)' }}
-      whileTap={isPending ? {} : { scale: 0.98 }}
+      whileHover={
+        isPending
+          ? {}
+          : {
+              scale: 1.015,
+              borderColor: 'rgba(108, 92, 231, 0.45)',
+              boxShadow: '0 6px 32px rgba(0,0,0,0.5), 0 0 20px rgba(108,92,231,0.12)',
+            }
+      }
+      whileTap={isPending ? {} : { scale: 0.975 }}
     >
       {/* Icon */}
       <div
-        className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
+        className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-105"
         style={{
-          background: isPending ? 'rgba(255,255,255,0.04)' : 'rgba(108, 92, 231, 0.12)',
-          border: isPending ? '1px solid rgba(255,255,255,0.06)' : '1px solid rgba(108, 92, 231, 0.2)',
+          background: isPending ? 'rgba(255,255,255,0.03)' : 'rgba(108, 92, 231, 0.14)',
+          border: isPending ? '1px solid rgba(255,255,255,0.05)' : '1px solid rgba(108, 92, 231, 0.25)',
         }}
       >
         <LinkIcon icon={link.icon} pending={isPending} />
