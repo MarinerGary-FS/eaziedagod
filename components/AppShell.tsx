@@ -68,8 +68,8 @@ export default function AppShell() {
             key="bio"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.4, ease: 'easeInOut' }}
+            exit={{ opacity: 0, scale: 1.04, filter: 'blur(6px)' }}
+            transition={{ duration: 0.35, ease: [0.4, 0, 1, 1] }}
             className="relative z-10"
           >
             <BioMode onEnterFull={enterFullExperience} />
@@ -77,10 +77,10 @@ export default function AppShell() {
         ) : (
           <motion.div
             key="full"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5, ease: 'easeOut' }}
+            initial={{ opacity: 0, scale: 0.97, filter: 'blur(8px)' }}
+            animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+            exit={{ opacity: 0, scale: 1.02, filter: 'blur(6px)' }}
+            transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1], delay: 0.05 }}
             className="relative z-10"
           >
             <FullExperience onReturnToBio={returnToBio} />

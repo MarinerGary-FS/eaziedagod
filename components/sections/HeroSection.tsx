@@ -53,6 +53,43 @@ export default function HeroSection({ onEnterBio }: HeroSectionProps) {
             background: 'radial-gradient(ellipse 40% 50% at 5% 60%, rgba(108, 92, 231, 0.08) 0%, transparent 50%)',
           }}
         />
+
+        {/* Animated orbs */}
+        <motion.div
+          className="absolute rounded-full pointer-events-none"
+          style={{
+            width: 480,
+            height: 480,
+            top: '10%',
+            left: '15%',
+            background: 'radial-gradient(circle, rgba(108, 92, 231, 0.12) 0%, transparent 70%)',
+            filter: 'blur(60px)',
+          }}
+          animate={{
+            x: [0, 30, -20, 10, 0],
+            y: [0, -25, 15, -10, 0],
+            scale: [1, 1.06, 0.96, 1.03, 1],
+          }}
+          transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
+        />
+        <motion.div
+          className="absolute rounded-full pointer-events-none"
+          style={{
+            width: 320,
+            height: 320,
+            bottom: '20%',
+            right: '10%',
+            background: 'radial-gradient(circle, rgba(162, 155, 254, 0.09) 0%, transparent 70%)',
+            filter: 'blur(50px)',
+          }}
+          animate={{
+            x: [0, -20, 15, -8, 0],
+            y: [0, 20, -15, 8, 0],
+            scale: [1, 0.94, 1.08, 0.97, 1],
+          }}
+          transition={{ duration: 16, repeat: Infinity, ease: 'easeInOut', delay: -5 }}
+        />
+
         {/* Grain texture */}
         <div
           className="absolute inset-0 opacity-[0.04]"

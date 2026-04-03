@@ -72,6 +72,11 @@ export const eazieContent = {
     fallbackLabel: 'Stream on Spotify',
     distrokidHref: '',
     embedHeight: 352,
+    // ⚡ REPLACE: Paste your most recent YouTube embed URL here
+    // Format: https://www.youtube.com/embed/[VIDEO_ID]
+    // Example: https://www.youtube.com/embed/dQw4w9WgXcQ
+    videoEmbedUrl: 'https://www.tiktok.com/embed/v2/6944873500259716358',
+    videoLabel: 'Watch the Visual',
   },
 
   // ── Primary Link Stack (Bio Mode) ────────────────────────────

@@ -13,6 +13,8 @@ interface SpotifyEmbedCardProps {
   embedHeight?: number
   compact?: boolean
   featured?: boolean
+  videoEmbedUrl?: string
+  videoLabel?: string
 }
 
 export default function SpotifyEmbedCard({
@@ -26,6 +28,8 @@ export default function SpotifyEmbedCard({
   embedHeight = 352,
   compact = false,
   featured = false,
+  videoEmbedUrl,
+  videoLabel = 'Watch the Visual',
 }: SpotifyEmbedCardProps) {
   return (
     <motion.div
@@ -107,6 +111,40 @@ export default function SpotifyEmbedCard({
               style={{ borderRadius: '12px', display: 'block', border: 'none' }}
               title={`${title} — Spotify`}
             />
+          </div>
+        ) : videoEmbedUrl ? (
+          /* Video embed fallback — YouTube or TikTok */
+          <div className="w-full flex flex-col gap-3 flex-1">
+            <div
+              className="w-full rounded-xl overflow-hidden relative"
+              style={{ paddingBottom: '56.25%', height: 0 }}
+            >
+              <iframe
+                src={videoEmbedUrl}
+                className="absolute top-0 left-0 w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                loading="lazy"
+                style={{ borderRadius: '12px', border: 'none' }}
+                title={`${title} — ${videoLabel}`}
+              />
+            </div>
+            <div className="flex items-center justify-between">
+              <span className="font-body text-text-muted text-xs">{videoLabel}</span>
+              {href && (
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 font-display font-semibold text-[11px] text-accent hover:text-white transition-colors duration-200"
+                >
+                  {fallbackLabel}
+                  <svg width="10" height="10" viewBox="0 0 16 16" fill="none">
+                    <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </a>
+              )}
+            </div>
           </div>
         ) : (
           <div

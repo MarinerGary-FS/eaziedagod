@@ -87,12 +87,6 @@ export default function ConnectSection() {
               >
                 {eazieContent.connect.bookingEmail}
               </a>
-              <p className="font-body text-text-muted text-xs mt-1">
-                Direct line:{' '}
-                <a href={eazieContent.connect.smsHref} className="text-text-secondary hover:text-white transition-colors duration-200">
-                  {eazieContent.connect.phoneDisplay}
-                </a>
-              </p>
             </div>
 
             {/* H@VEN link */}

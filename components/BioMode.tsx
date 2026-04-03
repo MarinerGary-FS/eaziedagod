@@ -145,6 +145,8 @@ export default function BioMode({ onEnterFull }: BioModeProps) {
             href={eazieContent.latestSingle.fallbackHref}
             fallbackLabel={eazieContent.latestSingle.fallbackLabel}
             isAvailable={eazieContent.latestSingle.isAvailable}
+            videoEmbedUrl={eazieContent.latestSingle.videoEmbedUrl}
+            videoLabel={eazieContent.latestSingle.videoLabel}
             compact
           />
         </motion.div>

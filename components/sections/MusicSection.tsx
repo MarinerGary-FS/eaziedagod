@@ -76,6 +76,8 @@ export default function MusicSection() {
               href={eazieContent.latestSingle.fallbackHref}
               fallbackLabel={eazieContent.latestSingle.fallbackLabel}
               isAvailable={eazieContent.latestSingle.isAvailable}
+              videoEmbedUrl={eazieContent.latestSingle.videoEmbedUrl}
+              videoLabel={eazieContent.latestSingle.videoLabel}
               label="Latest Drop"
               embedHeight={352}
             />
