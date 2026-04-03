@@ -14,6 +14,7 @@ export type LinkItem = {
 export type SocialLinks = {
   instagram: string
   spotify: string
+  appleMusic: string
   youtube: string
   tiktok: string
   x: string
@@ -21,6 +22,7 @@ export type SocialLinks = {
   facebook: string
   discord: string
   threads: string
+  snapchat: string
 }
 
 export const eazieContent = {
@@ -28,27 +30,33 @@ export const eazieContent = {
   artistName: 'EazieDaGod',
   displayName: 'Eazie',
   descriptor: 'Creator · Artist · Founder of H@VEN',
+  poplTagline: 'Eazie to remember & Hard to forget',
   shortTagline: 'Music. Culture. Identity.',
   locationCue: 'NYC / ATL',
+
+  // ── Profile Image ─────────────────────────────────────────────
+  // Drop artist photo at public/images/profile.jpg
+  profileImage: '/images/profile.jpg',
 
   // ── Copy ─────────────────────────────────────────────────────
   heroHeadline: 'Tap Into the Sound, the Story, and the Movement',
   heroSubcopy:
     'A premium home for the music, the content, and everything still unfolding.',
   shortBio:
-    'EazieDaGod is a musician, content creator, and world-builder from NYC/ATL — blending music, culture, and identity into one cohesive digital experience.',
+    'Eazie to remember & Hard to forget. Coach · Motivator · Artist — building a world where music, culture, and identity collide.',
   fullBio:
     "EazieDaGod is building more than a music career — he's building a world. Equal parts artist, creator, and founder, Eazie moves between sound and culture with intention. Through H@VEN, he's created an ecosystem where music, identity, and creative expression converge. The music is just the beginning.",
 
   // ── Music ────────────────────────────────────────────────────
   featuredAlbum: {
-    title: 'It Wasn\'t Eazie',
+    title: "It Wasn't Eazie",
     subtitle: 'EP · Available Now',
-    // ⚡ REPLACE: Add the Spotify album/EP embed URL here
+    // ⚡ REPLACE: Swap artist URL for the specific EP album URL when ready
     // Format: https://open.spotify.com/embed/album/[ALBUM_ID]?utm_source=generator&theme=0
     spotifyEmbedUrl:
       'https://open.spotify.com/embed/artist/7DOujQFTY8LJQDNUYaJxfy?utm_source=generator&theme=0',
     spotifyHref: 'https://open.spotify.com/artist/7DOujQFTY8LJQDNUYaJxfy',
+    appleMusicHref: 'https://music.apple.com/us/artist/eaziedagod/550460120',
     isAvailable: true,
     embedHeight: 352,
   },
@@ -56,15 +64,14 @@ export const eazieContent = {
   latestSingle: {
     title: 'Fast',
     subtitle: 'feat. Malique Young',
-    // ⚡ REPLACE: Set isAvailable to true and add spotifyEmbedUrl when track is on Spotify
+    // ⚡ REPLACE: Set isAvailable to true and add spotifyEmbedUrl when track is live
     // Format: https://open.spotify.com/embed/track/[TRACK_ID]?utm_source=generator&theme=0
     spotifyEmbedUrl: '',
     isAvailable: false,
     fallbackHref: 'https://open.spotify.com/artist/7DOujQFTY8LJQDNUYaJxfy',
     fallbackLabel: 'Stream on Spotify',
-    // ⚡ REPLACE: Add DistroKid hyperfollow or direct stream link
     distrokidHref: '',
-    embedHeight: 152,
+    embedHeight: 352,
   },
 
   // ── Primary Link Stack (Bio Mode) ────────────────────────────
@@ -73,31 +80,36 @@ export const eazieContent = {
       label: 'Stream on Spotify',
       href: 'https://open.spotify.com/artist/7DOujQFTY8LJQDNUYaJxfy',
       icon: 'spotify',
-      isNew: false,
+    },
+    {
+      label: 'Apple Music',
+      href: 'https://music.apple.com/us/artist/eaziedagod/550460120',
+      icon: 'applemusic',
     },
     {
       label: 'Follow on Instagram',
       href: 'https://www.instagram.com/eaziedagod/',
       icon: 'instagram',
-      isNew: false,
+    },
+    {
+      label: 'YouTube',
+      href: 'https://www.youtube.com/@eaziesworld',
+      icon: 'youtube',
+    },
+    {
+      label: 'TikTok',
+      href: 'https://www.tiktok.com/@eaziedagod',
+      icon: 'tiktok',
     },
     {
       label: 'Explore H@VEN',
       href: 'https://onelink.to/yqube5',
       icon: 'globe',
-      isNew: false,
     },
     {
-      label: 'YouTube',
-      href: '',
-      icon: 'youtube',
-      pending: true,
-    },
-    {
-      label: 'TikTok',
-      href: '',
-      icon: 'tiktok',
-      pending: true,
+      label: 'Join the Discord',
+      href: 'https://discord.gg/dCyEd5YPCH',
+      icon: 'discord',
     },
   ] as LinkItem[],
 
@@ -105,13 +117,15 @@ export const eazieContent = {
   socialLinks: {
     instagram: 'https://www.instagram.com/eaziedagod/',
     spotify: 'https://open.spotify.com/artist/7DOujQFTY8LJQDNUYaJxfy',
-    youtube: '', // ⚡ REPLACE
-    tiktok: '', // ⚡ REPLACE
-    x: '', // ⚡ REPLACE
-    twitch: '', // ⚡ REPLACE
-    facebook: '', // ⚡ REPLACE
-    discord: '', // ⚡ REPLACE
-    threads: '', // ⚡ REPLACE
+    appleMusic: 'https://music.apple.com/us/artist/eaziedagod/550460120',
+    youtube: 'https://www.youtube.com/@eaziesworld',
+    tiktok: 'https://www.tiktok.com/@eaziedagod',
+    x: '',
+    twitch: 'https://www.twitch.tv/EazieDaGod',
+    facebook: 'https://www.facebook.com/EazieDaGod',
+    discord: 'https://discord.gg/dCyEd5YPCH',
+    threads: 'https://www.threads.com/@EazieDaGod',
+    snapchat: 'https://www.snapchat.com/add/EazieAndAria',
   } as SocialLinks,
 
   // ── H@VEN Brand Section ──────────────────────────────────────
@@ -132,20 +146,23 @@ export const eazieContent = {
       'Music drops, creative content, and behind-the-scenes moments — across every platform.',
     // ⚡ REPLACE: Add featured video embed URL (YouTube or similar)
     featuredVideoUrl: '',
-    featuredVideoTitle: 'Latest Drop', // Shown while video URL is pending
+    featuredVideoTitle: 'Latest Drop',
   },
 
   // ── Connect / Booking ────────────────────────────────────────
   connect: {
     eyebrow: 'Work Together',
-    headline: 'Let\'s Build Something',
+    headline: "Let's Build Something",
     subCopy:
       'For bookings, collaborations, and brand partnerships — reach out directly.',
-    // ⚡ REPLACE: Add booking email
-    bookingEmail: '',
-    bookingEmailDisplay: 'Booking inquiries — link coming soon',
+    bookingEmail: 'BookingEazieDaGod@gmail.com',
+    phone: '+17183133367',
+    phoneDisplay: '+1 (718) 313-3367',
+    smsHref: 'sms:+17183133367',
     collaborationLabel: 'Work With Eazie',
-    // ⚡ REPLACE: Add contact form or booking URL
+    poplCardHref: 'https://popl.co/card/3fbOVBuC/3',
+    saveContactLabel: 'Save Contact',
+    // ⚡ REPLACE: Add contact form or booking calendar URL
     contactUrl: '',
   },
 
@@ -153,7 +170,7 @@ export const eazieContent = {
   marqueeItems: [
     'EazieDaGod',
     '·',
-    'It Wasn\'t Eazie',
+    "It Wasn't Eazie",
     '·',
     'H@VEN',
     '·',

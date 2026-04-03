@@ -1,10 +1,13 @@
 'use client'
 
+import { useState } from 'react'
+import Image from 'next/image'
 import { eazieContent } from '@/content/eazie-content'
 import AnimatedReveal from '../ui/AnimatedReveal'
 import SectionHeader from '../ui/SectionHeader'
 
 export default function AboutSection() {
+  const [imgError, setImgError] = useState(false)
   return (
     <section id="about" className="section-padding">
       <div className="max-w-4xl mx-auto">
@@ -28,11 +31,20 @@ export default function AboutSection() {
                   border: '1px solid rgba(108, 92, 231, 0.2)',
                 }}
               >
-                {/* ⚡ REPLACE: Add <Image> component with actual artist photo */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
-                  <span className="font-display font-bold text-5xl text-accent/60">E</span>
-                  <span className="font-body text-text-muted text-xs tracking-widest uppercase">Artist Photo</span>
-                </div>
+                {!imgError ? (
+                  <Image
+                    src={eazieContent.profileImage}
+                    alt={eazieContent.artistName}
+                    fill
+                    className="object-cover object-top"
+                    onError={() => setImgError(true)}
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
+                    <span className="font-display font-bold text-5xl text-accent/60">E</span>
+                    <span className="font-body text-text-muted text-xs tracking-widest uppercase">Artist Photo</span>
+                  </div>
+                )}
                 {/* Gradient overlay at bottom */}
                 <div
                   className="absolute bottom-0 left-0 right-0 h-1/3"
@@ -102,6 +114,17 @@ export default function AboutSection() {
                     <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
                   </svg>
                   Instagram
+                </a>
+                <a
+                  href={eazieContent.socialLinks.appleMusic}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group glass rounded-card px-5 py-3 font-display font-medium text-sm text-text-secondary hover:text-white transition-all duration-300 flex items-center gap-2 active:scale-[0.97]"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="opacity-60 group-hover:opacity-100">
+                    <path d="M23.994 6.124a9.23 9.23 0 00-.24-2.19c-.317-1.31-1.062-2.31-2.18-3.043a5.022 5.022 0 00-1.877-.726A10.496 10.496 0 0018.133 0H5.986c-.152.01-.303.017-.455.026C4.786.07 4.043.15 3.34.428 2.004.958 1.04 1.88.475 3.208c-.192.448-.292.925-.34 1.42-.024.27-.027.54-.028.81V18.56c.004.135.006.27.014.405.058 1.017.344 1.956.97 2.754a4.857 4.857 0 002.89 1.78c.4.082.807.12 1.216.128h13.01c.157-.009.314-.016.47-.028.866-.073 1.693-.3 2.437-.787a4.915 4.915 0 001.95-2.524c.17-.495.254-1.01.262-1.53V6.124zm-6.077 6.29l-5.232 3.016-.013.008a.64.64 0 01-.32.086.621.621 0 01-.622-.621V7.31c0-.34.276-.617.617-.617a.62.62 0 01.306.08l5.232 3.016c.208.12.336.343.336.58 0 .238-.128.46-.304.577l-.001-.001z" />
+                  </svg>
+                  Apple Music
                 </a>
               </div>
             </div>
