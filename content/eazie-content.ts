@@ -152,7 +152,7 @@ export const eazieContent = {
     // ⚡ REPLACE: Add featured video embed URL (YouTube or TikTok)
     // YouTube format: https://www.youtube.com/embed/[VIDEO_ID]
     // TikTok format:  https://www.tiktok.com/embed/v2/[VIDEO_ID]
-    featuredVideoUrl: 'https://www.tiktok.com/embed/v2/6944873500259716358',
+    featuredVideoUrl: '',
     featuredVideoTitle: 'Latest Drop',
   },
 

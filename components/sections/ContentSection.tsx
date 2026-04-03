@@ -6,10 +6,6 @@ import SectionHeader from '../ui/SectionHeader'
 import SocialIconRow from '../ui/SocialIconRow'
 
 export default function ContentSection() {
-  const featuredVideoUrl = eazieContent.content.featuredVideoUrl
-  const hasFeaturedVideo = !!featuredVideoUrl
-  const isTikTok = featuredVideoUrl.includes('tiktok.com')
-
   return (
     <section id="content" className="section-padding bg-bg-secondary">
       <div className="max-w-6xl mx-auto">
@@ -22,87 +18,29 @@ export default function ContentSection() {
           />
         </AnimatedReveal>
 
-        {/* Featured Video or Placeholder */}
-        <AnimatedReveal delay={0.1}>
-          <div className="mt-12">
-            {hasFeaturedVideo ? (
-              isTikTok ? (
-                /* TikTok — portrait/vertical format, centered */
-                <div className="flex justify-center">
-                  <div
-                    className="relative w-full max-w-[400px] rounded-card-lg overflow-hidden"
-                    style={{
-                      border: '1px solid rgba(255,255,255,0.07)',
-                      boxShadow: '0 4px 40px rgba(0,0,0,0.5)',
-                      paddingTop: '177.78%', // 9:16 portrait
-                    }}
-                  >
-                    <iframe
-                      src={featuredVideoUrl}
-                      className="absolute inset-0 w-full h-full"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      loading="lazy"
-                      title="Featured Video"
-                    />
-                  </div>
-                </div>
-              ) : (
-                /* YouTube / landscape format */
-                <div
-                  className="relative w-full rounded-card-lg overflow-hidden"
-                  style={{
-                    border: '1px solid rgba(255,255,255,0.07)',
-                    boxShadow: '0 4px 40px rgba(0,0,0,0.5)',
-                    paddingTop: '56.25%', // 16:9
-                  }}
-                >
-                  <iframe
-                    src={featuredVideoUrl}
-                    className="absolute inset-0 w-full h-full"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    loading="lazy"
-                    title="Featured Video"
-                  />
-                </div>
-              )
-            ) : (
-              // Placeholder video card
-              <div
-                className="relative w-full rounded-card-lg overflow-hidden flex items-center justify-center"
-                style={{
-                  background: 'linear-gradient(135deg, #1A1A1A 0%, #242424 100%)',
-                  border: '1px solid rgba(108, 92, 231, 0.15)',
-                  aspectRatio: '16 / 9',
-                  minHeight: '220px',
-                }}
-              >
-                <div className="flex flex-col items-center gap-3 text-center px-6">
-                  <div
-                    className="w-14 h-14 rounded-full flex items-center justify-center"
-                    style={{ background: 'rgba(108, 92, 231, 0.15)', border: '1px solid rgba(108, 92, 231, 0.3)' }}
-                  >
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6C5CE7" strokeWidth="1.5">
-                      <polygon points="5 3 19 12 5 21 5 3" fill="#6C5CE7" stroke="none" />
-                    </svg>
-                  </div>
-                  <p className="font-display font-medium text-white text-base">
-                    {eazieContent.content.featuredVideoTitle}
-                  </p>
-                  <p className="font-body text-text-muted text-sm">
-                    Video coming soon — follow on socials for the latest drops.
-                  </p>
-                  {/* ⚡ REPLACE: Replace placeholder with actual featuredVideoUrl in eazie-content.ts */}
-                </div>
-              </div>
-            )}
-          </div>
-        </AnimatedReveal>
+        {/*
+          ⚡ FEATURED VIDEO SLOT
+          When ready, uncomment and set featuredVideoUrl in eazie-content.ts.
+          Supports YouTube (16:9) and TikTok (9:16) — auto-detected by URL.
+
+          import FeaturedVideo from '../ui/FeaturedVideo'
+          <AnimatedReveal delay={0.1}>
+            <div className="mt-12">
+              <FeaturedVideo url={eazieContent.content.featuredVideoUrl} />
+            </div>
+          </AnimatedReveal>
+
+          Or swap in a grid of content cards:
+          <AnimatedReveal delay={0.1}>
+            <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              ...ContentCards
+            </div>
+          </AnimatedReveal>
+        */}
 
         {/* Platform grid */}
-        <AnimatedReveal delay={0.2}>
-          <div className="mt-12">
+        <AnimatedReveal delay={0.1}>
+          <div className="mt-14">
             <p className="text-center text-text-muted text-xs uppercase tracking-widest font-body mb-6">
               Follow across every platform
             </p>
@@ -110,8 +48,8 @@ export default function ContentSection() {
           </div>
         </AnimatedReveal>
 
-        {/* Platform cards for active links */}
-        <AnimatedReveal delay={0.25}>
+        {/* Platform cards */}
+        <AnimatedReveal delay={0.2}>
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
             <PlatformCard
               name="Spotify"
