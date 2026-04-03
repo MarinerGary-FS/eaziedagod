@@ -6,7 +6,9 @@ import SectionHeader from '../ui/SectionHeader'
 import SocialIconRow from '../ui/SocialIconRow'
 
 export default function ContentSection() {
-  const hasFeaturedVideo = !!eazieContent.content.featuredVideoUrl
+  const featuredVideoUrl = eazieContent.content.featuredVideoUrl
+  const hasFeaturedVideo = !!featuredVideoUrl
+  const isTikTok = featuredVideoUrl.includes('tiktok.com')
 
   return (
     <section id="content" className="section-padding bg-bg-secondary">
@@ -24,23 +26,47 @@ export default function ContentSection() {
         <AnimatedReveal delay={0.1}>
           <div className="mt-12">
             {hasFeaturedVideo ? (
-              <div
-                className="relative w-full rounded-card-lg overflow-hidden"
-                style={{
-                  border: '1px solid rgba(255,255,255,0.07)',
-                  boxShadow: '0 4px 40px rgba(0,0,0,0.5)',
-                  paddingTop: '56.25%', // 16:9
-                }}
-              >
-                <iframe
-                  src={eazieContent.content.featuredVideoUrl}
-                  className="absolute inset-0 w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  loading="lazy"
-                  title="Featured Video"
-                />
-              </div>
+              isTikTok ? (
+                /* TikTok — portrait/vertical format, centered */
+                <div className="flex justify-center">
+                  <div
+                    className="relative w-full max-w-[400px] rounded-card-lg overflow-hidden"
+                    style={{
+                      border: '1px solid rgba(255,255,255,0.07)',
+                      boxShadow: '0 4px 40px rgba(0,0,0,0.5)',
+                      paddingTop: '177.78%', // 9:16 portrait
+                    }}
+                  >
+                    <iframe
+                      src={featuredVideoUrl}
+                      className="absolute inset-0 w-full h-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      loading="lazy"
+                      title="Featured Video"
+                    />
+                  </div>
+                </div>
+              ) : (
+                /* YouTube / landscape format */
+                <div
+                  className="relative w-full rounded-card-lg overflow-hidden"
+                  style={{
+                    border: '1px solid rgba(255,255,255,0.07)',
+                    boxShadow: '0 4px 40px rgba(0,0,0,0.5)',
+                    paddingTop: '56.25%', // 16:9
+                  }}
+                >
+                  <iframe
+                    src={featuredVideoUrl}
+                    className="absolute inset-0 w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    loading="lazy"
+                    title="Featured Video"
+                  />
+                </div>
+              )
             ) : (
               // Placeholder video card
               <div

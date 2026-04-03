@@ -75,7 +75,7 @@ export const eazieContent = {
     // ⚡ REPLACE: Paste your most recent YouTube embed URL here
     // Format: https://www.youtube.com/embed/[VIDEO_ID]
     // Example: https://www.youtube.com/embed/dQw4w9WgXcQ
-    videoEmbedUrl: 'https://www.tiktok.com/embed/v2/6944873500259716358',
+    videoEmbedUrl: '',
     videoLabel: 'Watch the Visual',
   },
 
@@ -149,8 +149,10 @@ export const eazieContent = {
     headline: 'Follow the Journey',
     subCopy:
       'Music drops, creative content, and behind-the-scenes moments — across every platform.',
-    // ⚡ REPLACE: Add featured video embed URL (YouTube or similar)
-    featuredVideoUrl: '',
+    // ⚡ REPLACE: Add featured video embed URL (YouTube or TikTok)
+    // YouTube format: https://www.youtube.com/embed/[VIDEO_ID]
+    // TikTok format:  https://www.tiktok.com/embed/v2/[VIDEO_ID]
+    featuredVideoUrl: 'https://www.tiktok.com/embed/v2/6944873500259716358',
     featuredVideoTitle: 'Latest Drop',
   },
 
