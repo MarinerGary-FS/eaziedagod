@@ -36,13 +36,12 @@ export default function AboutSection() {
                     src={eazieContent.profileImage}
                     alt={eazieContent.artistName}
                     fill
-                    className="object-cover object-top"
+                    className="object-cover object-center scale-105"
                     onError={() => setImgError(true)}
                   />
                 ) : (
                   <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
                     <span className="font-display font-bold text-5xl text-accent/60">E</span>
-                    <span className="font-body text-text-muted text-xs tracking-widest uppercase">Artist Photo</span>
                   </div>
                 )}
                 {/* Gradient overlay at bottom */}

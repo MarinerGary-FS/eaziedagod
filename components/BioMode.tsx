@@ -41,8 +41,8 @@ export default function BioMode({ onEnterFull }: BioModeProps) {
           {/* Profile image */}
           <div className="relative">
             <div
-              className="w-24 h-24 rounded-full border-2 border-accent/40 overflow-hidden flex items-center justify-center"
-              style={{ background: 'linear-gradient(135deg, #1A1A1A 0%, #2a2a2a 100%)' }}
+              className="w-24 h-24 rounded-full overflow-hidden flex items-center justify-center"
+              style={{ background: '#0A0A0A' }}
             >
               {!imgError ? (
                 <Image
@@ -50,7 +50,7 @@ export default function BioMode({ onEnterFull }: BioModeProps) {
                   alt={eazieContent.artistName}
                   width={96}
                   height={96}
-                  className="w-full h-full object-cover object-top"
+                  className="w-full h-full object-cover object-center scale-110"
                   onError={() => setImgError(true)}
                   priority
                 />
@@ -58,21 +58,25 @@ export default function BioMode({ onEnterFull }: BioModeProps) {
                 <span className="font-display font-bold text-2xl text-accent">E</span>
               )}
             </div>
-            {/* Glow ring */}
-            <div
-              className="absolute inset-0 rounded-full animate-pulse-glow pointer-events-none"
-              style={{ boxShadow: '0 0 24px rgba(108, 92, 231, 0.35)' }}
-            />
           </div>
 
-          <div className="text-center">
+          <div className="flex flex-col items-center gap-2 text-center">
+            {/* Logo mark */}
+            <div className="w-12 h-12 rounded-xl overflow-hidden" style={{ background: '#111' }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={eazieContent.logoImage}
+                alt="H@VEN Logo"
+                className="w-full h-full object-cover"
+              />
+            </div>
             <h1 className="font-display font-bold text-2xl tracking-tight text-white">
               {eazieContent.artistName}
             </h1>
-            <p className="text-text-secondary text-sm mt-1 font-body">
+            <p className="text-text-secondary text-sm font-body">
               {eazieContent.descriptor}
             </p>
-            <p className="text-text-muted text-xs mt-1 font-body tracking-wider uppercase">
+            <p className="text-text-muted text-xs font-body tracking-wider uppercase">
               {eazieContent.locationCue}
             </p>
           </div>

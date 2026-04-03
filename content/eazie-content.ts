@@ -34,9 +34,9 @@ export const eazieContent = {
   shortTagline: 'Music. Culture. Identity.',
   locationCue: 'NYC / ATL',
 
-  // ── Profile Image ─────────────────────────────────────────────
-  // Drop artist photo at public/images/profile.jpg
+  // ── Images ───────────────────────────────────────────────────
   profileImage: '/images/profile.jpg',
+  logoImage: '/images/logo.svg',
 
   // ── Copy ─────────────────────────────────────────────────────
   heroHeadline: 'Tap Into the Sound, the Story, and the Movement',

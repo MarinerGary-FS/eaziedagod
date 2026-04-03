@@ -62,12 +62,23 @@ export default function SectionNav({ onReturnToBio }: SectionNavProps) {
         }}
       >
         <div className="max-w-7xl mx-auto px-8 h-16 flex items-center justify-between">
-          {/* Logo / name */}
+          {/* Logo */}
           <button
             onClick={onReturnToBio}
-            className="font-display font-bold text-white text-sm tracking-tight hover:text-accent transition-colors duration-200"
+            className="flex items-center gap-3 group"
           >
-            {eazieContent.artistName}
+            <div className="w-9 h-9 rounded-xl overflow-hidden flex-shrink-0"
+              style={{ background: '#111' }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={eazieContent.logoImage}
+                alt="H@VEN Logo"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <span className="font-display font-bold text-white text-sm tracking-tight group-hover:text-accent transition-colors duration-200">
+              {eazieContent.artistName}
+            </span>
           </button>
 
           {/* Nav links */}

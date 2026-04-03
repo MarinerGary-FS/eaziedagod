@@ -75,62 +75,57 @@ export default function HavenSection() {
             </div>
           </AnimatedReveal>
 
-          {/* Right — Visual card */}
+          {/* Right — Logo card */}
           <AnimatedReveal delay={0.15}>
-            <div className="relative">
-              {/* Main card */}
+            <div className="relative flex justify-center">
+              {/* Glow backdrop */}
               <div
-                className="relative overflow-hidden rounded-card-lg p-8 md:p-10"
+                className="absolute inset-0 rounded-card-lg opacity-30 blur-2xl pointer-events-none"
+                style={{ background: 'radial-gradient(circle, #6C5CE7 0%, transparent 70%)' }}
+              />
+
+              {/* Logo container */}
+              <div
+                className="relative w-full max-w-sm rounded-card-lg overflow-hidden"
                 style={{
-                  background: 'linear-gradient(135deg, rgba(108, 92, 231, 0.15) 0%, rgba(108, 92, 231, 0.05) 100%)',
                   border: '1px solid rgba(108, 92, 231, 0.25)',
-                  boxShadow: '0 0 60px rgba(108, 92, 231, 0.15)',
+                  boxShadow: '0 0 60px rgba(108, 92, 231, 0.2)',
                 }}
               >
-                {/* H@VEN large text */}
-                <div className="flex flex-col gap-4">
-                  <span
-                    className="font-display font-bold text-white/10 leading-none select-none"
-                    style={{ fontSize: 'clamp(4rem, 10vw, 7rem)', letterSpacing: '-0.06em' }}
-                  >
-                    H@VEN
-                  </span>
-                  <div className="h-px bg-gradient-to-r from-accent/40 via-accent/20 to-transparent" />
-                  <div className="flex flex-col gap-3">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={eazieContent.logoImage}
+                  alt="H@VEN Logo"
+                  className="w-full h-auto block"
+                />
+
+                {/* Pillar overlay at bottom */}
+                <div
+                  className="absolute bottom-0 left-0 right-0 px-6 py-5"
+                  style={{
+                    background: 'linear-gradient(to top, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.7) 60%, transparent 100%)',
+                  }}
+                >
+                  <div className="flex items-center justify-center gap-4 flex-wrap">
                     {['Music', 'Culture', 'Identity', 'Community'].map((pillar, i) => (
-                      <motion.div
+                      <motion.span
                         key={pillar}
-                        initial={{ opacity: 0, x: -10 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ delay: i * 0.08, duration: 0.4 }}
+                        initial={{ opacity: 0, y: 8 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2 + i * 0.07, duration: 0.4 }}
                         viewport={{ once: true }}
-                        className="flex items-center gap-3"
+                        className="font-display font-semibold text-xs uppercase tracking-widest text-white/70"
                       >
-                        <span
-                          className="w-1.5 h-1.5 rounded-full flex-shrink-0"
-                          style={{ background: '#6C5CE7' }}
-                        />
-                        <span className="font-display font-medium text-white text-lg md:text-xl">
-                          {pillar}
-                        </span>
-                      </motion.div>
+                        {pillar}
+                      </motion.span>
                     ))}
                   </div>
                 </div>
-
-                {/* Corner glow */}
-                <div
-                  className="absolute bottom-0 right-0 w-32 h-32 opacity-40 pointer-events-none"
-                  style={{
-                    background: 'radial-gradient(circle, #6C5CE7 0%, transparent 70%)',
-                    transform: 'translate(30%, 30%)',
-                  }}
-                />
               </div>
 
               {/* Floating badge */}
               <div
-                className="absolute -top-4 -right-4 rounded-full px-4 py-2 font-display font-bold text-xs text-white uppercase tracking-widest"
+                className="absolute -top-4 -right-4 rounded-full px-4 py-2 font-display font-bold text-xs text-white uppercase tracking-widest z-10"
                 style={{
                   background: 'linear-gradient(135deg, #6C5CE7, #8B7CF6)',
                   boxShadow: '0 0 20px rgba(108, 92, 231, 0.5)',

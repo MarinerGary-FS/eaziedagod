@@ -61,18 +61,21 @@ export default function StickyMobileNav({ onReturnToBio }: StickyMobileNavProps)
           href={eazieContent.haven.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex flex-col items-center gap-1 px-5 py-2.5 rounded-xl font-display font-bold text-white transition-all duration-200 active:scale-95"
-          style={{
-            background: 'linear-gradient(135deg, #6C5CE7 0%, #8B7CF6 100%)',
-            boxShadow: '0 0 20px rgba(108, 92, 231, 0.4)',
-            fontSize: '12px',
-          }}
+          className="flex flex-col items-center gap-1 px-4 py-2 rounded-xl transition-all duration-200 active:scale-95"
+          style={{ boxShadow: '0 0 16px rgba(108, 92, 231, 0.35)' }}
         >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
-            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-            <polyline points="9 22 9 12 15 12 15 22" />
-          </svg>
-          <span className="text-[10px]">H@VEN</span>
+          <div
+            className="w-10 h-10 rounded-xl overflow-hidden"
+            style={{ background: '#111', border: '1px solid rgba(108,92,231,0.4)' }}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={eazieContent.logoImage}
+              alt="H@VEN"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <span className="text-[10px] font-display font-bold text-white">H@VEN</span>
         </a>
 
         {/* Content/About */}
