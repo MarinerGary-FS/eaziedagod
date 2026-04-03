@@ -60,7 +60,7 @@ export default function HeroSection({ onEnterBio }: HeroSectionProps) {
           style={{
             width: 700,
             height: 700,
-            top: '−10%',
+            top: '-10%',
             left: '5%',
             background: 'radial-gradient(circle, rgba(108, 92, 231, 0.15) 0%, transparent 65%)',
             filter: 'blur(80px)',
@@ -230,7 +230,7 @@ export default function HeroSection({ onEnterBio }: HeroSectionProps) {
           filter: 'blur(20px)',
         }}
         initial={{ left: '-35%', opacity: 0 }}
-        animate={{ left: ['−35%', '135%'], opacity: [0, 1, 1, 0] }}
+        animate={{ left: ['-35%', '135%'], opacity: [0, 1, 1, 0] }}
         transition={{ duration: 1.8, delay: 1.0, ease: [0.25, 0.46, 0.45, 0.94], times: [0, 0.05, 0.9, 1] }}
       />
 
