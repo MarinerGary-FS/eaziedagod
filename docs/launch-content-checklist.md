@@ -1,56 +1,137 @@
 # Launch Content Checklist — Eazie
 
-## Identity
-- Official display name: EazieDaGod
-- Public-facing short name: Eazie
-- Descriptor: Creator of H@VEN
-- Secondary descriptor: Artist • Creator • World Builder
-- Location cue: NYC / ATL
+This file contains REAL launch-ready content and placeholders.
+Claude MUST use these values when building the site.
 
-## Core Links
-- Spotify artist page
-- Instagram
-- H@VEN app/page
-- Discord
-- YouTube
-- TikTok
-- Facebook
-- Threads
-- Twitch
+---
 
-## Music
-- Featured project title
-- Featured project Spotify album/EP URL
-- Latest single title
-- Latest single Spotify track URL
-- Optional fallback pre-save / HyperFollow URL
-- Cover art assets if available
+# CORE IDENTITY
 
-## Hero Assets
-- Primary portrait image
-- Optional secondary image
-- Optional logo / wordmark
-- Optional background texture / motion visual
+artistName: EazieDaGod  
+shortName: Eazie  
+descriptor: Creator of H@VEN  
+secondaryDescriptor: Artist • Creator • World Builder  
+location: NYC / ATL  
 
-## Brand Copy
-- 1-line descriptor
-- Short bio (50–80 words)
-- Full bio (120–180 words)
-- H@VEN description
-- CTA copy for Listen / Watch / Explore H@VEN / Contact
+---
 
-## Contact / Business
-- Booking email
-- Collaboration email or form
-- Social DM preference
-- Press/media contact if any
+# PRIMARY LINKS
 
-## Content / Media
-- Featured YouTube video URL
-- 2–6 short-form content items
-- Optional testimonials / co-signs / media mentions
+Spotify: https://open.spotify.com/artist/7DOujQFTY8LJQDNUYaJxfy  
+Instagram: https://www.instagram.com/eaziedagod/  
+H@VEN: https://onelink.to/yqube5  
 
-## Social Proof
-- Instagram handle
-- Follower counts if you want them shown
-- Spotify monthly listeners only if you want it surfaced
+# TO COMPLETE BEFORE LAUNCH
+Discord: [INSERT LINK]  
+YouTube: [INSERT LINK]  
+TikTok: [INSERT LINK]  
+Facebook: [INSERT LINK]  
+Threads: [INSERT LINK]  
+Twitch: [INSERT LINK]  
+
+---
+
+# MUSIC (CRITICAL)
+
+## Featured Project (LIVE)
+title: It Wasn't Eazie  
+type: EP  
+spotifyEmbed:
+https://open.spotify.com/embed/album/2F4s3dAGdbEw0KbVgchEKr?utm_source=generator  
+
+---
+
+## Latest Drop
+
+title: Fast (feat. Malique Young)  
+
+## Use ONE of the following:
+
+### Option A (Preferred — if Spotify track is available)
+spotifyEmbed:
+[INSERT TRACK EMBED URL]
+
+### Option B (Fallback — REQUIRED if track not confirmed)
+fallbackLink:
+https://distrokid.com/hyperfollow/eaziedagod/fast-feat-malique-young  
+
+CTA label:
+Listen Now  
+
+IMPORTANT:
+Claude MUST NOT leave this section blank.
+If no Spotify track URL is available, use the fallback CTA card.
+
+---
+
+# HERO ASSETS
+
+Profile Image: [INSERT IMAGE]  
+Hero Image (optional): [INSERT IMAGE]  
+Logo (optional): [INSERT IMAGE]  
+
+---
+
+# BRAND COPY
+
+## Short Bio (50–80 words)
+Eazie is a creator and artist building a digital world where music, culture, and identity collide. As the force behind H@VEN, he blends sound, storytelling, and experience into a unified presence designed to move people and create connection.
+
+## Full Bio (optional expansion)
+[EXPAND LATER]
+
+---
+
+# H@VEN SECTION
+
+Title: H@VEN  
+Description:
+H@VEN is an extension of Eazie’s creative universe — a space where music, community, and experience come together. It represents more than content. It’s a gateway into the world being built around the sound.
+
+CTA:
+Explore H@VEN  
+
+Link:
+https://onelink.to/yqube5  
+
+---
+
+# CONTACT / BUSINESS
+
+Booking Email: [INSERT EMAIL]  
+Contact Link (optional): [INSERT LINK]  
+
+---
+
+# CONTENT / MEDIA
+
+Featured Video: [INSERT URL]  
+
+Additional Content:
+- [INSERT]
+- [INSERT]
+- [INSERT]
+
+---
+
+# CTA PRIORITY
+
+Primary:
+- Enter Full Experience
+- Listen Now
+- Explore H@VEN
+
+Secondary:
+- Follow
+- Contact
+- Back to Bio
+
+---
+
+# FINAL RULE
+
+Claude MUST:
+- Use real links where provided
+- Use fallback logic where required
+- Never leave sections empty
+- Build a fully functional experience from this file
