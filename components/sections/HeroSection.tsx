@@ -58,36 +58,36 @@ export default function HeroSection({ onEnterBio }: HeroSectionProps) {
         <motion.div
           className="absolute rounded-full pointer-events-none"
           style={{
-            width: 480,
-            height: 480,
-            top: '10%',
-            left: '15%',
-            background: 'radial-gradient(circle, rgba(108, 92, 231, 0.12) 0%, transparent 70%)',
-            filter: 'blur(60px)',
+            width: 700,
+            height: 700,
+            top: '−10%',
+            left: '5%',
+            background: 'radial-gradient(circle, rgba(108, 92, 231, 0.15) 0%, transparent 65%)',
+            filter: 'blur(80px)',
           }}
           animate={{
-            x: [0, 30, -20, 10, 0],
-            y: [0, -25, 15, -10, 0],
-            scale: [1, 1.06, 0.96, 1.03, 1],
+            x: [0, 40, -25, 15, 0],
+            y: [0, -30, 20, -10, 0],
+            scale: [1, 1.08, 0.94, 1.04, 1],
           }}
-          transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
+          transition={{ duration: 24, repeat: Infinity, ease: 'easeInOut' }}
         />
         <motion.div
           className="absolute rounded-full pointer-events-none"
           style={{
-            width: 320,
-            height: 320,
-            bottom: '20%',
-            right: '10%',
-            background: 'radial-gradient(circle, rgba(162, 155, 254, 0.09) 0%, transparent 70%)',
-            filter: 'blur(50px)',
+            width: 500,
+            height: 500,
+            bottom: '5%',
+            right: '0%',
+            background: 'radial-gradient(circle, rgba(162, 155, 254, 0.1) 0%, transparent 65%)',
+            filter: 'blur(70px)',
           }}
           animate={{
-            x: [0, -20, 15, -8, 0],
-            y: [0, 20, -15, 8, 0],
-            scale: [1, 0.94, 1.08, 0.97, 1],
+            x: [0, -30, 20, -12, 0],
+            y: [0, 25, -18, 10, 0],
+            scale: [1, 0.92, 1.1, 0.96, 1],
           }}
-          transition={{ duration: 16, repeat: Infinity, ease: 'easeInOut', delay: -5 }}
+          transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut', delay: -7 }}
         />
 
         {/* Grain texture */}
@@ -136,16 +136,24 @@ export default function HeroSection({ onEnterBio }: HeroSectionProps) {
         {/* Headline — dominant, two-line intent */}
         <motion.h1
           variants={reveal(0.1)}
-          className="font-display font-bold text-white mb-7 leading-[0.95] tracking-tight"
+          className="font-display font-black text-white mb-8 leading-[0.92] tracking-tight"
           style={{
-            fontSize: 'clamp(3.2rem, 8.5vw, 7rem)',
-            letterSpacing: '-0.035em',
-            textShadow: '0 0 80px rgba(108, 92, 231, 0.25)',
+            fontSize: 'clamp(3.8rem, 10vw, 8.5rem)',
+            letterSpacing: '-0.04em',
+            textShadow: '0 0 120px rgba(108, 92, 231, 0.3), 0 0 40px rgba(108, 92, 231, 0.12)',
           }}
         >
           Tap Into the Sound,<br />
-          <span className="text-gradient-accent">the Story,</span>{' '}
-          <span style={{ color: 'rgba(255,255,255,0.55)' }}>and the Movement</span>
+          <span
+            style={{
+              background: 'linear-gradient(135deg, #c4b5fd 0%, #ffffff 40%, #a29bfe 100%)',
+              backgroundSize: '200% auto',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+            }}
+          >the Story,</span>{' '}
+          <span style={{ color: 'rgba(255,255,255,0.45)' }}>and the Movement</span>
         </motion.h1>
 
         {/* Subcopy */}
@@ -213,6 +221,18 @@ export default function HeroSection({ onEnterBio }: HeroSectionProps) {
           <div className="h-px w-8 bg-accent/30" />
         </motion.div>
       </motion.div>
+
+      {/* ── Signature sweep — one-time horizontal light streak across hero ── */}
+      <motion.div
+        className="absolute inset-y-0 w-[35%] pointer-events-none z-20"
+        style={{
+          background: 'linear-gradient(90deg, transparent 0%, rgba(108, 92, 231, 0.08) 40%, rgba(162, 155, 254, 0.12) 50%, rgba(108, 92, 231, 0.08) 60%, transparent 100%)',
+          filter: 'blur(20px)',
+        }}
+        initial={{ left: '-35%', opacity: 0 }}
+        animate={{ left: ['−35%', '135%'], opacity: [0, 1, 1, 0] }}
+        transition={{ duration: 1.8, delay: 1.0, ease: [0.25, 0.46, 0.45, 0.94], times: [0, 0.05, 0.9, 1] }}
+      />
 
       {/* ── Scroll indicator ───────────────────────────── */}
       <motion.div

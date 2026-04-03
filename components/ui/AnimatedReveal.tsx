@@ -19,17 +19,17 @@ export default function AnimatedReveal({
     <motion.div
       initial={{
         opacity: 0,
-        y: direction === 'up' ? 40 : 0,
-        filter: 'blur(3px)',
+        y: direction === 'up' ? 56 : 0,
+        filter: 'blur(6px)',
       }}
       whileInView={{
         opacity: 1,
         y: 0,
         filter: 'blur(0px)',
       }}
-      viewport={{ once: true, margin: '-80px' }}
+      viewport={{ once: true, margin: '-40px' }}
       transition={{
-        duration: 0.75,
+        duration: 0.9,
         delay,
         ease: [0.16, 1, 0.3, 1],
       }}

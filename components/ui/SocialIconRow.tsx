@@ -36,11 +36,7 @@ export default function SocialIconRow({ links, large = false }: SocialIconRowPro
           target="_blank"
           rel="noopener noreferrer"
           aria-label={item.label}
-          className={`${btnSize} rounded-full flex items-center justify-center text-text-secondary hover:text-white transition-all duration-300 hover:scale-110 active:scale-95`}
-          style={{
-            background: 'rgba(255,255,255,0.05)',
-            border: '1px solid rgba(255,255,255,0.08)',
-          }}
+          className={`${btnSize} rounded-full flex items-center justify-center text-text-secondary social-icon-btn`}
         >
           {item.icon}
         </a>

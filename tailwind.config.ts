@@ -67,12 +67,22 @@ const config: Config = {
           '0%, 100%': { opacity: '0.5', transform: 'scale(1)' },
           '50%': { opacity: '0.8', transform: 'scale(1.02)' },
         },
+        breathe: {
+          '0%, 100%': { transform: 'scale(1)', opacity: '0.08' },
+          '50%': { transform: 'scale(1.15)', opacity: '0.14' },
+        },
+        shimmerText: {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+        },
       },
       animation: {
         'gradient-shift': 'gradientShift 10s ease infinite',
         'ambient-drift': 'ambientDrift 12s ease-in-out infinite',
         'marquee': 'marquee 28s linear infinite',
         'pulse-glow': 'pulseGlow 4s ease-in-out infinite',
+        'breathe': 'breathe 8s ease-in-out infinite',
+        'shimmer-text': 'shimmerText 6s ease-in-out infinite',
       },
       backgroundSize: {
         '300%': '300%',
