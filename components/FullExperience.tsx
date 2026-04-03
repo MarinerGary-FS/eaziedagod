@@ -9,6 +9,7 @@ import HavenSection from './sections/HavenSection'
 import ContentSection from './sections/ContentSection'
 import ConnectSection from './sections/ConnectSection'
 import MarqueeBar from './ui/MarqueeBar'
+import AttributionCredit from './ui/AttributionCredit'
 import { eazieContent } from '@/content/eazie-content'
 
 interface FullExperienceProps {
@@ -46,14 +47,7 @@ export default function FullExperience({ onReturnToBio }: FullExperienceProps) {
         <p className="text-text-muted text-xs font-body mt-1">
           {eazieContent.shortTagline}
         </p>
-        <a
-          href="https://marinernexus.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block mt-4 font-body text-[10px] text-text-muted opacity-30 hover:opacity-60 transition-opacity duration-300"
-        >
-          Built by Mariner Nexus — Digital Experience Systems
-        </a>
+        <AttributionCredit />
       </footer>
 
       {/* Mobile sticky nav */}
