@@ -6,8 +6,8 @@
 @layer base {
   :root {
     --bg-primary: #0a0a0a;
-    --accent: #6c5ce7;
-    --accent-glow: rgba(108, 92, 231, 0.4);
+    --accent: #D4AF37;
+    --accent-glow: rgba(212, 175, 55, 0.35);
     --font-display: 'Space Grotesk', sans-serif;
     --font-body: 'Inter', sans-serif;
   }
@@ -33,7 +33,7 @@
   }
 
   ::selection {
-    background: rgba(108, 92, 231, 0.45);
+    background: rgba(212, 175, 55, 0.35);
     color: #ffffff;
   }
 
@@ -41,7 +41,7 @@
   ::-webkit-scrollbar { width: 3px; }
   ::-webkit-scrollbar-track { background: #0a0a0a; }
   ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
-  ::-webkit-scrollbar-thumb:hover { background: #6c5ce7; }
+  ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
 }
 
 /* ── Utility Classes ─────────────────────────────────────────── */
@@ -49,14 +49,14 @@
 
   /* Typography */
   .text-gradient-accent {
-    background: linear-gradient(135deg, #a29bfe 0%, #ffffff 50%, #a29bfe 100%);
+    background: linear-gradient(135deg, #F5D76E 0%, #ffffff 50%, #F5D76E 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .text-gradient-brand {
-    background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 60%, #ffffff 100%);
+    background: linear-gradient(135deg, #D4AF37 0%, #F5D76E 60%, #ffffff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -78,19 +78,19 @@
   }
 
   .glass-accent {
-    background: rgba(108, 92, 231, 0.1);
+    background: rgba(212, 175, 55, 0.08);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(108, 92, 231, 0.25);
+    border: 1px solid rgba(212, 175, 55, 0.22);
   }
 
   /* Glow effects */
   .glow-accent {
-    box-shadow: 0 0 40px rgba(108, 92, 231, 0.35), 0 0 80px rgba(108, 92, 231, 0.1);
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.3), 0 0 80px rgba(212, 175, 55, 0.08);
   }
 
   .glow-sm {
-    box-shadow: 0 0 20px rgba(108, 92, 231, 0.3);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
   }
 
   /* Premium card */
@@ -102,8 +102,8 @@
 
   .premium-card-accent {
     background: linear-gradient(145deg, #1c1c1c 0%, #161616 100%);
-    border: 1px solid rgba(108, 92, 231, 0.3);
-    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5), 0 0 60px rgba(108, 92, 231, 0.1), inset 0 1px 0 rgba(108, 92, 231, 0.15);
+    border: 1px solid rgba(212, 175, 55, 0.28);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5), 0 0 60px rgba(212, 175, 55, 0.08), inset 0 1px 0 rgba(212, 175, 55, 0.12);
   }
 
   /* Section padding — cinematic spacing */
@@ -142,22 +142,22 @@
     font-weight: 600;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #6c5ce7;
+    color: #D4AF37;
     font-family: var(--font-display);
   }
 
   /* Ambient background */
   .ambient-bg {
     background:
-      radial-gradient(ellipse 80% 60% at 20% 10%, rgba(108, 92, 231, 0.14) 0%, transparent 60%),
-      radial-gradient(ellipse 60% 50% at 80% 90%, rgba(108, 92, 231, 0.1) 0%, transparent 50%),
+      radial-gradient(ellipse 80% 60% at 20% 10%, rgba(212, 175, 55, 0.1) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 80% 90%, rgba(212, 175, 55, 0.07) 0%, transparent 50%),
       #0a0a0a;
   }
 
   /* Horizontal rule */
   .rule-accent {
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(108, 92, 231, 0.5), transparent);
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.45), transparent);
   }
 
   /* Spotify iframe container */
@@ -210,9 +210,9 @@
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .social-icon-btn:hover {
-    background: rgba(108, 92, 231, 0.12);
-    border-color: rgba(108, 92, 231, 0.4);
-    box-shadow: 0 0 16px rgba(108, 92, 231, 0.2);
+    background: rgba(212, 175, 55, 0.1);
+    border-color: rgba(212, 175, 55, 0.38);
+    box-shadow: 0 0 16px rgba(212, 175, 55, 0.18);
     transform: scale(1.12);
     color: #ffffff;
   }

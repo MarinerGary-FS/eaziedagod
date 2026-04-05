@@ -24,8 +24,8 @@ export default function LinkCard({ link, index }: LinkCardProps) {
           ? {}
           : {
               scale: 1.015,
-              borderColor: 'rgba(108, 92, 231, 0.45)',
-              boxShadow: '0 6px 32px rgba(0,0,0,0.5), 0 0 20px rgba(108,92,231,0.12)',
+              borderColor: 'rgba(212, 175, 55, 0.4)',
+              boxShadow: '0 6px 32px rgba(0,0,0,0.5), 0 0 20px rgba(212,175,55,0.1)',
             }
       }
       whileTap={isPending ? {} : { scale: 0.975 }}
@@ -34,8 +34,8 @@ export default function LinkCard({ link, index }: LinkCardProps) {
       <div
         className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-105"
         style={{
-          background: isPending ? 'rgba(255,255,255,0.03)' : 'rgba(108, 92, 231, 0.14)',
-          border: isPending ? '1px solid rgba(255,255,255,0.05)' : '1px solid rgba(108, 92, 231, 0.25)',
+          background: isPending ? 'rgba(255,255,255,0.03)' : 'rgba(212, 175, 55, 0.1)',
+          border: isPending ? '1px solid rgba(255,255,255,0.05)' : '1px solid rgba(212, 175, 55, 0.22)',
         }}
       >
         <LinkIcon icon={link.icon} pending={isPending} />
@@ -81,7 +81,7 @@ export default function LinkCard({ link, index }: LinkCardProps) {
       {link.isNew && !isPending && (
         <span
           className="absolute top-2 right-2 text-[9px] font-display font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-full"
-          style={{ background: '#6C5CE7', color: 'white' }}
+          style={{ background: '#D4AF37', color: '#0A0A0A' }}
         >
           New
         </span>
@@ -106,7 +106,7 @@ export default function LinkCard({ link, index }: LinkCardProps) {
 }
 
 function LinkIcon({ icon, pending }: { icon: string; pending?: boolean }) {
-  const color = pending ? '#444' : '#6C5CE7'
+  const color = pending ? '#444' : '#D4AF37'
   const size = 18
 
   switch (icon) {

@@ -39,7 +39,7 @@ export default function AppShell() {
         <div
           className="absolute w-[600px] h-[600px] rounded-full opacity-[0.07] animate-ambient-drift"
           style={{
-            background: 'radial-gradient(circle, #6C5CE7 0%, transparent 70%)',
+            background: 'radial-gradient(circle, #D4AF37 0%, transparent 70%)',
             top: '-200px',
             left: '-100px',
           }}
@@ -47,7 +47,7 @@ export default function AppShell() {
         <div
           className="absolute w-[400px] h-[400px] rounded-full opacity-[0.05] animate-ambient-drift"
           style={{
-            background: 'radial-gradient(circle, #6C5CE7 0%, transparent 70%)',
+            background: 'radial-gradient(circle, #D4AF37 0%, transparent 70%)',
             bottom: '-100px',
             right: '-80px',
             animationDelay: '-6s',

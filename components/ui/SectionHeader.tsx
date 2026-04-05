@@ -18,7 +18,7 @@ export default function SectionHeader({
         {!centered && (
           <div
             className="h-px w-12"
-            style={{ background: 'linear-gradient(to right, #6C5CE7, transparent)' }}
+            style={{ background: 'linear-gradient(to right, #D4AF37, transparent)' }}
           />
         )}
         <span className="eyebrow">{eyebrow}</span>

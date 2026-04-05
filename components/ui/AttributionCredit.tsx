@@ -36,9 +36,9 @@ export default function AttributionCredit() {
         <span
           className="w-1 h-1 rounded-full flex-shrink-0 transition-all duration-500"
           style={{
-            background: '#6C5CE7',
+            background: '#D4AF37',
             opacity: hovered ? 1 : 0.6,
-            boxShadow: hovered ? '0 0 6px rgba(108, 92, 231, 0.85)' : '0 0 0px rgba(108, 92, 231, 0)',
+            boxShadow: hovered ? '0 0 6px rgba(212, 175, 55, 0.8)' : '0 0 0px rgba(212, 175, 55, 0)',
           }}
         />
         {attribution.label}

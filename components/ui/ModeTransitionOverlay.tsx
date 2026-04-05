@@ -25,8 +25,8 @@ export default function ModeTransitionOverlay() {
       <motion.div
         className="absolute left-0 right-0 h-[2px] pointer-events-none"
         style={{
-          background: 'linear-gradient(90deg, transparent, #6C5CE7, #a29bfe, #6C5CE7, transparent)',
-          boxShadow: '0 0 24px #6C5CE7, 0 0 60px rgba(108,92,231,0.5)',
+          background: 'linear-gradient(90deg, transparent, #C9A227, #F5D76E, #C9A227, transparent)',
+          boxShadow: '0 0 24px #D4AF37, 0 0 60px rgba(212,175,55,0.45)',
         }}
         initial={{ top: '100%', opacity: 0 }}
         animate={{ top: ['-2px', '101%'], opacity: [0, 1, 1, 0] }}
@@ -48,8 +48,8 @@ export default function ModeTransitionOverlay() {
         <div
           className="w-16 h-16 rounded-2xl overflow-hidden mb-1"
           style={{
-            border: '1px solid rgba(108,92,231,0.4)',
-            boxShadow: '0 0 40px rgba(108,92,231,0.4)',
+            border: '1px solid rgba(212,175,55,0.35)',
+            boxShadow: '0 0 40px rgba(212,175,55,0.35)',
           }}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -71,7 +71,7 @@ export default function ModeTransitionOverlay() {
         {/* Rule */}
         <motion.div
           className="h-px rounded-full"
-          style={{ background: 'linear-gradient(90deg, transparent, #6C5CE7, transparent)' }}
+          style={{ background: 'linear-gradient(90deg, transparent, #D4AF37, transparent)' }}
           initial={{ width: 0 }}
           animate={{ width: ['0px', '120px', '80px'] }}
           transition={{ duration: 1.05, times: [0, 0.4, 1] }}
@@ -90,7 +90,7 @@ export default function ModeTransitionOverlay() {
       <motion.div
         className="absolute w-80 h-80 rounded-full pointer-events-none"
         style={{
-          background: 'radial-gradient(circle, rgba(108,92,231,0.25) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(212,175,55,0.2) 0%, transparent 70%)',
           filter: 'blur(40px)',
         }}
         initial={{ opacity: 0, scale: 0.5 }}

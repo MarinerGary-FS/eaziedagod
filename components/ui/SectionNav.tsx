@@ -99,7 +99,7 @@ export default function SectionNav({ onReturnToBio }: SectionNavProps) {
                     <motion.div
                       layoutId="nav-indicator"
                       className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full"
-                      style={{ background: '#6C5CE7' }}
+                      style={{ background: '#D4AF37' }}
                       transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                     />
                   )}

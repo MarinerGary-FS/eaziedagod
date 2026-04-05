@@ -42,7 +42,7 @@ export default function BioMode({ onEnterFull }: BioModeProps) {
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[400px] pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse 80% 70% at 50% 0%, rgba(108, 92, 231, 0.2) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse 80% 70% at 50% 0%, rgba(212, 175, 55, 0.15) 0%, transparent 70%)',
         }}
       />
 
@@ -60,7 +60,7 @@ export default function BioMode({ onEnterFull }: BioModeProps) {
             <div
               className="absolute -inset-[3px] rounded-full"
               style={{
-                background: 'linear-gradient(135deg, #6C5CE7, #a29bfe, #6C5CE7)',
+                background: 'linear-gradient(135deg, #C9A227, #F5D76E, #C9A227)',
                 opacity: 0.7,
                 filter: 'blur(1px)',
               }}
@@ -88,7 +88,7 @@ export default function BioMode({ onEnterFull }: BioModeProps) {
             {/* Ambient pulse behind image */}
             <div
               className="absolute inset-0 rounded-full animate-pulse-glow pointer-events-none -z-10"
-              style={{ boxShadow: '0 0 40px rgba(108, 92, 231, 0.5)' }}
+              style={{ boxShadow: '0 0 40px rgba(212, 175, 55, 0.4)' }}
             />
           </div>
 
@@ -97,7 +97,7 @@ export default function BioMode({ onEnterFull }: BioModeProps) {
             {/* Logo mark */}
             <div
               className="w-10 h-10 rounded-xl overflow-hidden mb-1"
-              style={{ border: '1px solid rgba(108,92,231,0.3)', background: '#111' }}
+              style={{ border: '1px solid rgba(212,175,55,0.25)', background: '#111' }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={eazieContent.logoImage} alt="H@VEN" className="w-full h-full object-cover" />
@@ -157,8 +157,8 @@ export default function BioMode({ onEnterFull }: BioModeProps) {
             onClick={onEnterFull}
             className="w-full relative group overflow-hidden rounded-card py-[18px] px-6 font-display font-black text-[13px] tracking-wide text-white transition-all duration-300 active:scale-[0.97]"
             style={{
-              background: 'linear-gradient(135deg, #5b4bd4 0%, #6C5CE7 50%, #8B7CF6 100%)',
-              boxShadow: '0 0 0 1px rgba(108,92,231,0.5), 0 0 50px rgba(108, 92, 231, 0.45), 0 8px 32px rgba(0,0,0,0.5)',
+              background: 'linear-gradient(135deg, #B8960C 0%, #D4AF37 50%, #E8C84A 100%)',
+              boxShadow: '0 0 0 1px rgba(212,175,55,0.5), 0 0 50px rgba(212, 175, 55, 0.4), 0 8px 32px rgba(0,0,0,0.5)',
               letterSpacing: '0.04em',
             }}
           >

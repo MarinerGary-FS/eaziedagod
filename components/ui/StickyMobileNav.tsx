@@ -62,11 +62,11 @@ export default function StickyMobileNav({ onReturnToBio }: StickyMobileNavProps)
           target="_blank"
           rel="noopener noreferrer"
           className="flex flex-col items-center gap-1 px-4 py-2 rounded-xl transition-all duration-200 active:scale-95"
-          style={{ boxShadow: '0 0 16px rgba(108, 92, 231, 0.35)' }}
+          style={{ boxShadow: '0 0 16px rgba(212, 175, 55, 0.28)' }}
         >
           <div
             className="w-10 h-10 rounded-xl overflow-hidden"
-            style={{ background: '#111', border: '1px solid rgba(108,92,231,0.4)' }}
+            style={{ background: '#111', border: '1px solid rgba(212,175,55,0.32)' }}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img

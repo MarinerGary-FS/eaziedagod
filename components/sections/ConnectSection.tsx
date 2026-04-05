@@ -12,7 +12,7 @@ export default function ConnectSection() {
         className="absolute inset-0 z-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse 80% 60% at 50% 100%, rgba(108, 92, 231, 0.1) 0%, transparent 65%)',
+            'radial-gradient(ellipse 80% 60% at 50% 100%, rgba(212, 175, 55, 0.08) 0%, transparent 65%)',
         }}
       />
 
@@ -36,8 +36,8 @@ export default function ConnectSection() {
               rel="noopener noreferrer"
               className="w-full group relative overflow-hidden rounded-card py-4 px-6 font-display font-semibold text-sm tracking-wide text-white text-center transition-all duration-300 active:scale-[0.97] flex items-center justify-center gap-2"
               style={{
-                background: 'linear-gradient(135deg, #6C5CE7 0%, #8B7CF6 100%)',
-                boxShadow: '0 0 28px rgba(108, 92, 231, 0.4)',
+                background: 'linear-gradient(135deg, #C9A227 0%, #E8C84A 100%)',
+                boxShadow: '0 0 28px rgba(212, 175, 55, 0.35)',
               }}
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8">

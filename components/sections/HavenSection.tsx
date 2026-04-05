@@ -17,7 +17,7 @@ export default function HavenSection() {
           className="absolute inset-0"
           style={{
             background:
-              'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(108, 92, 231, 0.1) 0%, transparent 70%)',
+              'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(212, 175, 55, 0.07) 0%, transparent 70%)',
           }}
         />
         {/* Grid texture */}
@@ -25,8 +25,8 @@ export default function HavenSection() {
           className="absolute inset-0 opacity-[0.025]"
           style={{
             backgroundImage: `
-              linear-gradient(rgba(108, 92, 231, 0.6) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(108, 92, 231, 0.6) 1px, transparent 1px)
+              linear-gradient(rgba(212, 175, 55, 0.4) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(212, 175, 55, 0.4) 1px, transparent 1px)
             `,
             backgroundSize: '60px 60px',
           }}
@@ -62,8 +62,8 @@ export default function HavenSection() {
                 <span
                   className="relative overflow-hidden rounded-card px-7 py-3.5 font-display font-semibold text-sm tracking-wide text-white transition-all duration-300 active:scale-[0.97] flex items-center gap-2"
                   style={{
-                    background: 'linear-gradient(135deg, #6C5CE7 0%, #8B7CF6 100%)',
-                    boxShadow: '0 0 24px rgba(108, 92, 231, 0.35)',
+                    background: 'linear-gradient(135deg, #C9A227 0%, #E8C84A 100%)',
+                    boxShadow: '0 0 24px rgba(212, 175, 55, 0.3)',
                   }}
                 >
                   {eazieContent.haven.ctaLabel}
@@ -81,15 +81,15 @@ export default function HavenSection() {
               {/* Glow backdrop */}
               <div
                 className="absolute inset-0 rounded-card-lg opacity-30 blur-2xl pointer-events-none"
-                style={{ background: 'radial-gradient(circle, #6C5CE7 0%, transparent 70%)' }}
+                style={{ background: 'radial-gradient(circle, #D4AF37 0%, transparent 70%)' }}
               />
 
               {/* Logo container */}
               <div
                 className="relative w-full max-w-sm rounded-card-lg overflow-hidden"
                 style={{
-                  border: '1px solid rgba(108, 92, 231, 0.25)',
-                  boxShadow: '0 0 60px rgba(108, 92, 231, 0.2)',
+                  border: '1px solid rgba(212, 175, 55, 0.22)',
+                  boxShadow: '0 0 60px rgba(212, 175, 55, 0.15)',
                 }}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -127,8 +127,8 @@ export default function HavenSection() {
               <div
                 className="absolute -top-4 -right-4 rounded-full px-4 py-2 font-display font-bold text-xs text-white uppercase tracking-widest z-10"
                 style={{
-                  background: 'linear-gradient(135deg, #6C5CE7, #8B7CF6)',
-                  boxShadow: '0 0 20px rgba(108, 92, 231, 0.5)',
+                  background: 'linear-gradient(135deg, #C9A227, #E8C84A)',
+                  boxShadow: '0 0 20px rgba(212, 175, 55, 0.4)',
                 }}
               >
                 The Ecosystem

@@ -36,21 +36,21 @@ export default function HeroSection({ onEnterBio }: HeroSectionProps) {
         <div
           className="absolute inset-0"
           style={{
-            background: 'radial-gradient(ellipse 100% 80% at 50% -10%, rgba(108, 92, 231, 0.28) 0%, transparent 60%)',
+            background: 'radial-gradient(ellipse 100% 80% at 50% -10%, rgba(212, 175, 55, 0.2) 0%, transparent 60%)',
           }}
         />
         {/* Secondary corner depth */}
         <div
           className="absolute inset-0"
           style={{
-            background: 'radial-gradient(ellipse 50% 60% at 85% 95%, rgba(108, 92, 231, 0.14) 0%, transparent 55%)',
+            background: 'radial-gradient(ellipse 50% 60% at 85% 95%, rgba(212, 175, 55, 0.1) 0%, transparent 55%)',
           }}
         />
         {/* Tertiary left accent */}
         <div
           className="absolute inset-0"
           style={{
-            background: 'radial-gradient(ellipse 40% 50% at 5% 60%, rgba(108, 92, 231, 0.08) 0%, transparent 50%)',
+            background: 'radial-gradient(ellipse 40% 50% at 5% 60%, rgba(212, 175, 55, 0.06) 0%, transparent 50%)',
           }}
         />
 
@@ -62,7 +62,7 @@ export default function HeroSection({ onEnterBio }: HeroSectionProps) {
             height: 700,
             top: '-10%',
             left: '5%',
-            background: 'radial-gradient(circle, rgba(108, 92, 231, 0.15) 0%, transparent 65%)',
+            background: 'radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, transparent 65%)',
             filter: 'blur(80px)',
           }}
           animate={{
@@ -79,7 +79,7 @@ export default function HeroSection({ onEnterBio }: HeroSectionProps) {
             height: 500,
             bottom: '5%',
             right: '0%',
-            background: 'radial-gradient(circle, rgba(162, 155, 254, 0.1) 0%, transparent 65%)',
+            background: 'radial-gradient(circle, rgba(245, 215, 110, 0.08) 0%, transparent 65%)',
             filter: 'blur(70px)',
           }}
           animate={{
@@ -101,7 +101,7 @@ export default function HeroSection({ onEnterBio }: HeroSectionProps) {
         <div
           className="absolute inset-0 opacity-[0.025]"
           style={{
-            backgroundImage: 'linear-gradient(rgba(108,92,231,0.8) 1px, transparent 1px)',
+            backgroundImage: 'linear-gradient(rgba(212,175,55,0.6) 1px, transparent 1px)',
             backgroundSize: '100% 120px',
           }}
         />
@@ -119,15 +119,15 @@ export default function HeroSection({ onEnterBio }: HeroSectionProps) {
           <span
             className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full text-[11px] font-display font-semibold tracking-[0.2em] uppercase"
             style={{
-              background: 'rgba(108, 92, 231, 0.1)',
-              border: '1px solid rgba(108, 92, 231, 0.35)',
-              color: '#c4b5fd',
-              boxShadow: '0 0 20px rgba(108, 92, 231, 0.15)',
+              background: 'rgba(212, 175, 55, 0.08)',
+              border: '1px solid rgba(212, 175, 55, 0.3)',
+              color: '#F5D76E',
+              boxShadow: '0 0 20px rgba(212, 175, 55, 0.12)',
             }}
           >
             <span
               className="w-1.5 h-1.5 rounded-full"
-              style={{ background: '#6C5CE7', boxShadow: '0 0 6px #6C5CE7' }}
+              style={{ background: '#D4AF37', boxShadow: '0 0 6px #D4AF37' }}
             />
             {eazieContent.descriptor}
           </span>
@@ -140,13 +140,13 @@ export default function HeroSection({ onEnterBio }: HeroSectionProps) {
           style={{
             fontSize: 'clamp(3.8rem, 10vw, 8.5rem)',
             letterSpacing: '-0.04em',
-            textShadow: '0 0 120px rgba(108, 92, 231, 0.3), 0 0 40px rgba(108, 92, 231, 0.12)',
+            textShadow: '0 0 120px rgba(212, 175, 55, 0.2), 0 0 40px rgba(212, 175, 55, 0.08)',
           }}
         >
           Tap Into the Sound,<br />
           <span
             style={{
-              background: 'linear-gradient(135deg, #c4b5fd 0%, #ffffff 40%, #a29bfe 100%)',
+              background: 'linear-gradient(135deg, #F5D76E 0%, #ffffff 40%, #D4AF37 100%)',
               backgroundSize: '200% auto',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
@@ -177,8 +177,8 @@ export default function HeroSection({ onEnterBio }: HeroSectionProps) {
             rel="noopener noreferrer"
             className="group relative overflow-hidden rounded-card px-9 py-4 font-display font-bold text-[13px] tracking-wide text-white w-full sm:w-auto text-center transition-all duration-300 active:scale-[0.97]"
             style={{
-              background: 'linear-gradient(135deg, #5b4bd4 0%, #6C5CE7 50%, #8B7CF6 100%)',
-              boxShadow: '0 0 0 1px rgba(108,92,231,0.4), 0 0 40px rgba(108, 92, 231, 0.45), 0 8px 32px rgba(0,0,0,0.4)',
+              background: 'linear-gradient(135deg, #B8960C 0%, #D4AF37 50%, #E8C84A 100%)',
+              boxShadow: '0 0 0 1px rgba(212,175,55,0.4), 0 0 40px rgba(212, 175, 55, 0.4), 0 8px 32px rgba(0,0,0,0.4)',
             }}
           >
             <span className="relative z-10 flex items-center justify-center gap-2.5">
@@ -226,7 +226,7 @@ export default function HeroSection({ onEnterBio }: HeroSectionProps) {
       <motion.div
         className="absolute inset-y-0 w-[35%] pointer-events-none z-20"
         style={{
-          background: 'linear-gradient(90deg, transparent 0%, rgba(108, 92, 231, 0.08) 40%, rgba(162, 155, 254, 0.12) 50%, rgba(108, 92, 231, 0.08) 60%, transparent 100%)',
+          background: 'linear-gradient(90deg, transparent 0%, rgba(212, 175, 55, 0.06) 40%, rgba(245, 215, 110, 0.09) 50%, rgba(212, 175, 55, 0.06) 60%, transparent 100%)',
           filter: 'blur(20px)',
         }}
         initial={{ left: '-35%', opacity: 0 }}
@@ -243,7 +243,7 @@ export default function HeroSection({ onEnterBio }: HeroSectionProps) {
       >
         <motion.div
           className="w-[1px] rounded-full"
-          style={{ background: 'linear-gradient(to bottom, #6C5CE7, transparent)', height: 48 }}
+          style={{ background: 'linear-gradient(to bottom, #D4AF37, transparent)', height: 48 }}
           animate={{ scaleY: [1, 0.4, 1], opacity: [0.8, 0.3, 0.8] }}
           transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
         />
